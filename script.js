@@ -8,7 +8,7 @@ const getSum = () => {
 };
 
 document.addEventListener('DOMContentLoaded', function() {
-	const prices = document.querySelectorAll(".price");
+	const prices = document.querySelectorAll(".prices");
 	
 	const table = document.querySelector("table");
 	const newRow = document.createElement("tr");
