@@ -1,11 +1,5 @@
 const prices = document.querySelectorAll(".price");
 
-let total = 0;
-
-prices.forEach(price => {
-  total += Number(price.textContent);
-});
-
 const table = document.querySelector("table");
 const newRow = document.createElement("tr");
 
@@ -23,11 +17,11 @@ document.body.appendChild(getSumBtn);
 
 const getSum = () => {
 //Add your code here
-	let s=0;
-	elems.forEach((userItem) => {
-		s+=userItem;
-	}
-	return s;
+	let total = 0;
+
+	prices.forEach(price => {
+	total += Number(price.textContent);
+	});
 };
 
 getSumBtn.addEventListener("click", getSum);
