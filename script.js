@@ -9,21 +9,26 @@ const getSum = () => {
 
 	const table = document.querySelector("table");
 
-	const newRow = document.createElement("tr");
-	const newCell = document.createElement("td");
+	let ansCell = document.querySelector("#ans");
 
-	newCell.colSpan = 2;
-	newCell.textContent = `Total Price: ${total}`;
+	if (!ansCell) {
+		const newRow = document.createElement("tr");
+		ansCell = document.createElement("td");
 
-	newRow.appendChild(newCell);
-	table.appendChild(newRow);
+		ansCell.id = "ans";
+		ansCell.colSpan = 2;
+
+		newRow.appendChild(ansCell);
+		table.appendChild(newRow);
+	}
+
+	ansCell.textContent = total;
 };
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
+	const btn = document.createElement("button");
+	btn.textContent = "Get Total Price";
+	document.body.appendChild(btn);
 
-	const getSumBtn = document.createElement("button");
-	getSumBtn.append("Get Total Price");
-	document.body.appendChild(getSumBtn);
-
-	getSumBtn.addEventListener("click", getSum);
+	btn.addEventListener("click", getSum);
 });
